@@ -2,6 +2,9 @@ FROM debian
 LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
+ENV APPSERVER=appserver.company.com \
+    DBSERVER=dbserver.company.com
+
 # Install Apache and Python and create directory structures
 RUN apt-get update \
  && apt-get install apache2 python-pip -y \

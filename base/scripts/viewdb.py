@@ -9,8 +9,7 @@ cgitb.enable()
 import appsitefunctions
 
 #This section will grab the name of the app server host name from the mtwa.conf file
-servernames=appsitefunctions.importconfiguration() 
-dbServerHostname=servernames[1]
+dbServerHostname=os.getenv("DBSERVER")
 
 # Connect to the database.
 import pymysql
