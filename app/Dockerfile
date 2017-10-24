@@ -6,4 +6,4 @@ RUN service apache2 restart
 
 EXPOSE 8080/tcp
 # Start apache server
-CMD /usr/sbin/apache2ctl -D FOREGROUND
+ENTRYPOINT ["/sbin/entrypoint.sh"]

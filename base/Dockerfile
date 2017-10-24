@@ -17,6 +17,8 @@ RUN apt-get update \
 COPY mtwa.conf /etc/mtwa/
 COPY html/* /var/www/html/appdemo/
 COPY scripts/* /var/www/html/appdemo/
+COPY entrypoint.sh /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh
 
 # Copy configuration files when using this as a base for the web and app tier images
 ONBUILD COPY 000-default.conf /etc/apache2/sites-enabled/
