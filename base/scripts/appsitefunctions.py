@@ -238,9 +238,8 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		webprotocol = servervalues[2]
 		port = servervalues[3]
 
-		#This section will grab the name of the app server host name from the mtwa.conf file
-		servernames=importconfiguration() 
-		AppServerHostname=servernames[0]
+		#This section will grab the name of the app server host name from the APPSERVER environment variable
+		AppServerHostname=os.getenv("APPSERVER")
 
 		for each in basehtml: 
 			print each #This will print the lines from base.html that is loaded into the FOR LOOP
