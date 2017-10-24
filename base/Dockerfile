@@ -21,3 +21,4 @@ COPY scripts/* /var/www/html/appdemo/
 # Copy configuration files when using this as a base for the web and app tier images
 ONBUILD COPY 000-default.conf /etc/apache2/sites-enabled/
 ONBUILD COPY ports.conf /etc/apache2/
+ONBUILD RUN chmod o+x /var/www/html/appdemo/*
