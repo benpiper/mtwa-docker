@@ -152,7 +152,7 @@ def getserverinfo():
 		return (hostname,ipaddress,serverprotocol,serverport)
 
 	#IF YOU WANT TO FIGURE OUT WHAT VARIABLES CAN BE USED, UNCOMMENT THE NEXT LINE TO ADD OTHER INFORMATION AND REFRESH THE WEBPAGE
-	# cgi.test() 
+	cgi.test() 
 
 def getclientinfo():
 	#Gathers client information
@@ -172,10 +172,10 @@ def enterdbformhtml():
 	print '<td>'
 	print '<form action="commitdb-web.py" method="POST" id="usrform">'
 	print '  <b>Name:</b><br>'
-	print '  <input type="text" name="name" value="Mickey Mouse">'
+	print '  <input type="text" name="name" value="">'
 	print '  <br><br>'
 	print '  <b>Notes:</b><br>'
-	print '  <textarea rows="6" cols="50" name="notes" form="usrform">Hot Dog, Hot Dog, Hot Diggy Dog!</textarea>'
+	print '  <textarea rows="6" cols="50" name="notes" form="usrform"></textarea>'
 	print '  <br><br>'
 	print '  <b>Number of records to create:</b><br>'
 	print '  <input type="number" name="count" min="1" max="1000" value="1">'
