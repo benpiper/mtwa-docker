@@ -239,7 +239,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		port = servervalues[3]
 
 		#This section will grab the name of the app server host name from the APPSERVER environment variable
-		AppServerHostname=os.getenv("APPSERVER")
+		AppServerHostname = os.getenv("APPSERVER")
 
 		for each in basehtml: 
 			print each #This will print the lines from base.html that is loaded into the FOR LOOP
@@ -268,7 +268,8 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 
 				#This gets and sets the values for the app server 
 				try:
-					appserverresponse = urllib.urlopen('http://%s:8080/appserverinfo.py'%AppServerHostname)
+					url="http://%s:8080/appserverinfo.py" %(AppServerHostname)
+					appserverresponse = urllib.urlopen(url)
 					appserverhtml = removehtmlheaders(appserverresponse.read())
 					print appserverhtml
 				except:
