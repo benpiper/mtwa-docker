@@ -5,6 +5,7 @@
 
 # Turn on debug mode.
 import cgitb
+import os
 cgitb.enable()
 import appsitefunctions
 
