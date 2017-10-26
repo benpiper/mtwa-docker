@@ -75,8 +75,8 @@ def getserverparam(param_name):
     
 	for each in os.environ.keys():	
 		#Uncomment the next line if you want to see all of the values that could be used
-		#print (each, os.environ[each]), "<br>" #db
-		#print each, ":each <br>" #db
+		print (each, os.environ[each]), "<br>" #db
+		print each, ":each <br>" #db
 
 		each_value = os.environ[each]
 
