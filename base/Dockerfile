@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:stable-slim
 LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
