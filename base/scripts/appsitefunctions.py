@@ -237,6 +237,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		ipaddress = servervalues[1]
 		webprotocol = servervalues[2]
 		port = servervalues[3]
+		cookies = "coOoOoOokie crisp"
 
 		#This section will grab the name of the app server host name from the APPSERVER environment variable
 		AppServerHostname = os.getenv("APPSERVER")
@@ -256,6 +257,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				print '<tr><td align="right">IPv4:</td><td>%s<br></td></tr>' %clientipaddress
 				print '<tr><td align="right">Port:</td><td>%s<br></td></tr>' %clientportnum
 				print '<tr><td align="right">X_Forwarded_For:</td><td>%s<br></td></tr>' %forwarded_for
+				print '<tr><td align="right">Cookies:</td><td>%s<br></td></tr>' %cookies
 
 			#This print the local web server information
 			if each == '<!-- StartWebServerInfo -->':
