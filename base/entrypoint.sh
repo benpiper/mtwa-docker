@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-rc-service apache2 start
+/usr/sbin/apachectl -D FOREGROUND
