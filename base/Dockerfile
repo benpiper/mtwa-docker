@@ -2,8 +2,9 @@ FROM debian:stable-slim
 LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
-ENV APPSERVER=appserver.company.com \
-    DBSERVER=dbserver.company.com
+ENV APPSERVER=app.benpiper.com \
+    DBSERVER=db.benpiper.com \
+    COOKIEVALUE="mycookie!"
 
 # Install Apache and Python and create directory structures
 RUN apt-get update \

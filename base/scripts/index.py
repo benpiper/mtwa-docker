@@ -10,7 +10,7 @@ cgitb.enable()
 
 #Set cookie
 c = Cookie.SimpleCookie()
-c["cereal"] = "so delicious!"
+c["custom"] = os.getenv("COOKIEVALUE")
 print c.output()
 
 #This will figure out what module to call based on the URL passed.  /index.py?module=viewdb for example
