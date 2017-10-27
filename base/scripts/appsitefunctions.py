@@ -75,8 +75,8 @@ def getserverparam(param_name):
     
 	for each in os.environ.keys():	
 		#Uncomment the next line if you want to see all of the values that could be used
-		print (each, os.environ[each]), "<br>" #db
-		print each, ":each <br>" #db
+		#print (each, os.environ[each]), "<br>" #db
+		#print each, ":each <br>" #db
 
 		each_value = os.environ[each]
 
@@ -162,7 +162,8 @@ def getclientinfo():
 	# print 'clientport', clientport #db
 	x4ed4 = getserverparam('HTTP_X_FORWARDED_FOR')
 	# print 'x4ed4', x4ed4 #db
-	return (clientip,clientport,x4ed4)
+	cookies = getserverparam('HTTP_COOKIE')
+	return (clientip,clientport,x4ed4,cookies)
 
 def enterdbformhtml():
 	
@@ -232,12 +233,12 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		clientipaddress = clientvalues[0]
 		clientportnum = clientvalues[1]
 		forwarded_for = clientvalues[2]
+		cookies = clientvalues[3]
 		servervalues = getserverinfo()
 		host = servervalues[0]
 		ipaddress = servervalues[1]
 		webprotocol = servervalues[2]
 		port = servervalues[3]
-		cookies = "coOoOoOokie crisp"
 
 		#This section will grab the name of the app server host name from the APPSERVER environment variable
 		AppServerHostname = os.getenv("APPSERVER")
