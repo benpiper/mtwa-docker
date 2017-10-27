@@ -2,10 +2,16 @@
 import os.path
 import cgi
 import appsitefunctions
+import Cookie
 
 # Turn on debug mode.
 import cgitb
 cgitb.enable()
+
+#Set cookie
+c = Cookie.SimpleCookie()
+c["cereal"] = "so delicious!"
+print c.output()
 
 #This will figure out what module to call based on the URL passed.  /index.py?module=viewdb for example
 form = cgi.FieldStorage()
