@@ -241,8 +241,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		port = servervalues[3]
 
 		#This section will grab the name of the app server host name from the APPSERVER environment variable
-		AppServerHostname = os.getenv("APPSERVER")
-                AppServerPort = os.getenv("APPSERVERPORT")
+		AppServerURI = os.getenv("APPSERVER")                
 
 		for each in basehtml: 
 			print each #This will print the lines from base.html that is loaded into the FOR LOOP
@@ -272,7 +271,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 
 				#This gets and sets the values for the app server 
 				try:
-					url="http://%s:%s/appserverinfo.py" %(AppServerHostname,AppServerPort)
+					url="%s/appserverinfo.py" %(AppServerURI)
 					appserverresponse = urllib.urlopen(url)
 					appserverhtml = removehtmlheaders(appserverresponse.read())
 					print appserverhtml
@@ -289,7 +288,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 					elif modulename == 'commitdb':
 						#Here formname_or_cmd is used as the NAME which was entered into the form
 						try:
-							urlstr = 'http://%s:%s/commitdb-app.py?name=%s&notes=%s&count=%s'%(AppServerHostname,AppServerPort,formname_or_cmd,formnotes,formcount)
+							urlstr = '%s/commitdb-app.py?name=%s&notes=%s&count=%s'%(AppServerURI,formname_or_cmd,formnotes,formcount)
 							appserverresponse = urllib.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
@@ -299,7 +298,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 					elif modulename == 'cleardb':
 						#Here formname_or_cmd is used as the COMMAND which was entered into the form
 						try:
-							urlstr = 'http://%s:%s/cleardb-app.py?command=%s'%(AppServerHostname,AppServerPort,formname_or_cmd)
+							urlstr = '%s/cleardb-app.py?command=%s'%(AppServerURI,formname_or_cmd)
 							appserverresponse = urllib.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
@@ -307,7 +306,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 							printappservererror()
 					else:
 						try:
-							urlstr = 'http://%s:%s/%s.py'%(AppServerHostname,AppServerPort,modulename)
+							urlstr = '%s/%s.py'%(AppServerURI,modulename)
 							appserverresponse = urllib.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
