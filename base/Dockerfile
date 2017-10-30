@@ -2,8 +2,8 @@ FROM debian:stable-slim
 LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
-ENV APPSERVER="http://app.benpiper.com:8080" \
-    DBSERVER=db.benpiper.com \
+ENV APPSERVER="http://app.siliconharbor.io:8080" \
+    DBSERVER=db.siliconharbor.io \
     COOKIEVALUE="mycookie!"
 
 # Install Apache and Python and create directory structures
