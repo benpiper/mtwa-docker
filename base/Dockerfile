@@ -3,6 +3,7 @@ LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
 ENV APPSERVER=app.benpiper.com \
+    APPSERVERPORT=8080 \
     DBSERVER=db.benpiper.com \
     COOKIEVALUE="mycookie!"
 
