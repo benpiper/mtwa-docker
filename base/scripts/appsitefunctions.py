@@ -289,8 +289,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 					elif modulename == 'commitdb':
 						#Here formname_or_cmd is used as the NAME which was entered into the form
 						try:
-							urlstr = 
-'http://%s:%s/commitdb-app.py?name=%s&notes=%s&count=%s'%(AppServerHostname,AppServerPort,formname_or_cmd,formnotes,formcount)
+							urlstr = 'http://%s:%s/commitdb-app.py?name=%s&notes=%s&count=%s'%(AppServerHostname,AppServerPort,formname_or_cmd,formnotes,formcount)
 							appserverresponse = urllib.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
@@ -300,8 +299,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 					elif modulename == 'cleardb':
 						#Here formname_or_cmd is used as the COMMAND which was entered into the form
 						try:
-							urlstr = 
-'http://%s:%s/cleardb-app.py?command=%s'%(AppServerHostname,AppServerPort,formname_or_cmd)
+							urlstr = 'http://%s:%s/cleardb-app.py?command=%s'%(AppServerHostname,AppServerPort,formname_or_cmd)
 							appserverresponse = urllib.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
@@ -309,8 +307,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 							printappservererror()
 					else:
 						try:
-							urlstr = 
-'http://%s:%s/%s.py'%(AppServerHostname,AppServerPort,modulename)
+							urlstr = 'http://%s:%s/%s.py'%(AppServerHostname,AppServerPort,modulename)
 							appserverresponse = urllib.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
