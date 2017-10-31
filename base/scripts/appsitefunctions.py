@@ -251,6 +251,10 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 
 				# print 'StartTitleInfo' #db
 				print '<title>%s / %s [%s]</title>'%(host,ipaddress,webprotocol)
+				
+			if each == '<!-- StartImageInfo -->':
+				
+				print '<IMG SRC="mtwa.png"></IMG>'
 
 			if each == '<!-- StartClientInfo -->':
 
