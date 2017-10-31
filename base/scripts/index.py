@@ -3,6 +3,7 @@ import os.path
 import cgi
 import appsitefunctions
 import Cookie
+import string, random
 
 # Turn on debug mode.
 import cgitb
