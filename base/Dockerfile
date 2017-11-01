@@ -9,8 +9,8 @@ ENV APPSERVER="http://app.siliconharbor.io:8080" \
 # Install Apache and Python and create directory structures
 RUN apt-get update \
  && apt-get install apache2 python-pip -y \
- && apt-get clean \
- && pip install pymysql \
+ && apt-get clean
+RUN pip install pymysql \
  && a2dismod mpm_event \
  && a2enmod mpm_prefork cgi \
  && service apache2 restart \
