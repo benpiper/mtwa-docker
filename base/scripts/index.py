@@ -12,20 +12,18 @@ cgitb.enable()
 def id_generator(size=6, chars=string.ascii_uppercase):
  return ''.join(random.choice(chars) for _ in range(size))
 
-expirecookie = int(os.getenv("EXPIRECOOKIE"))
-
 if 'HTTP_COOKIE' in os.environ:
  cookies = os.environ['HTTP_COOKIE']
  c = Cookie.SimpleCookie()
  c.load(cookies)
- c['appSessionID']['expires'] = expirecookie
+ c['appSessionID']['expires'] = 300
  print c.output()
 else:
 #Set cookie
  appsessionidvalue = socket.gethostname()+id_generator()
  c = Cookie.SimpleCookie()
  c['appSessionID'] = appsessionidvalue
- c['appSessionID']['expires'] = expirecookie
+ c['appSessionID']['expires'] = 300
  print c.output()
 
 #This will figure out what module to call based on the URL passed.  /index.py?module=viewdb for example
