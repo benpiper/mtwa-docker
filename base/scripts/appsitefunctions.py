@@ -254,7 +254,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				
 			if each == '<!-- StartImageInfo -->':
 				
-				print '<IMG SRC="mtwa.png"></IMG>'
+				print '<IMG SRC="image"></IMG>'
 
 			if each == '<!-- StartClientInfo -->':
 
