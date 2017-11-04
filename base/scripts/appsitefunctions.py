@@ -245,6 +245,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		ipaddress = servervalues[1]
 		webprotocol = servervalues[2]
 		port = servervalues[3]
+		ec2hostname = servervalues[4]
 
 		#This section will grab the name of the app server host name from the APPSERVER environment variable
 		AppServerURI = os.getenv("APPSERVER")                
@@ -274,7 +275,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 			if each == '<!-- StartWebServerInfo -->':
 				
 				#This will print that infomation for the HTML table in base.html
-				printserverinfo(host,ipaddress,webprotocol,port)
+				printserverinfo(host,ipaddress,webprotocol,port,ec2hostname)
 
 			#This print the local web server information
 			if each == '<!-- StartAppServerInfo -->':
