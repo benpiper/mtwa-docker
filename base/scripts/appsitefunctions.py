@@ -3,8 +3,7 @@ import os.path
 import cgi
 import socket
 import os
-import urllib
-import urllib.request
+import urllib2
 import time
 
 # Turn on debug mode.
@@ -144,8 +143,10 @@ def getserverinfo():
 	#Use OS environment variables gather information
 	serverport = getserverparam('SERVER_PORT')
 	
-	#Get 
-        ec2hostname = urllib.request.urlopen("http://169.254.169.254/latest/meta-data/hostname").read()
+	#Get EC2 hostname
+	sock = urllib2.urlopen("http://169.254.169.254/latest/meta-data/hostname")
+        ec2hostname = sock.read()
+        sock.close()
 	
 	if getserverparam('REQUEST_SCHEME') != None:  
 		serverprotocol = str.upper(getserverparam('REQUEST_SCHEME'))
