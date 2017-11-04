@@ -4,6 +4,7 @@ import cgi
 import socket
 import os
 import urllib
+import urllib.request
 import time
 
 # Turn on debug mode.
