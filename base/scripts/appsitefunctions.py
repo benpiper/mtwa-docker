@@ -143,13 +143,16 @@ def getserverinfo():
 	#Use OS environment variables gather information
 	serverport = getserverparam('SERVER_PORT')
 	
+	#Get 
+        ec2hostname = urllib.request.urlopen("http://169.254.169.254/latest/meta-data/hostname").read()
+	
 	if getserverparam('REQUEST_SCHEME') != None:  
 		serverprotocol = str.upper(getserverparam('REQUEST_SCHEME'))
 	
-		return (hostname,ipaddress,serverprotocol,serverport)
+		return (hostname,ipaddress,serverprotocol,serverport,ec2hostname)
 	else:
 		serverprotocol = 'Unknown'
-		return (hostname,ipaddress,serverprotocol,serverport)
+		return (hostname,ipaddress,serverprotocol,serverport,ec2hostname)
 
 	#IF YOU WANT TO FIGURE OUT WHAT VARIABLES CAN BE USED, UNCOMMENT THE NEXT LINE TO ADD OTHER INFORMATION AND REFRESH THE WEBPAGE
 	cgi.test() 
@@ -207,13 +210,14 @@ def cleardbformhtml():
 
 	print '</center>'
 
-def printserverinfo(hostname,ipaddress,webprotocol,serverport):
+def printserverinfo(hostname,ipaddress,webprotocol,serverport,ec2hostname):
 
 	localtime = time.strftime("%Y-%m-%d %H:%M:%S")
 
 
 	protocol_color = setcolor(webprotocol)
-	print '<tr><td align="right">Hostname:</td><td>%s<br></td></tr>'%hostname
+	print '<tr><td align="right">EC2 hostname:</td><td>%s<br></td></tr>'%ec2hostname
+	print '<tr><td align="right">Container hostname:</td><td>%s<br></td></tr>'%hostname
 	print '<tr><td align="right">IPv4:</td><td>%s<br></td></tr>' %ipaddress
 	print '<tr><td align="right">Protocol: </td><td><B><font color=\"%s\">%s</B><br></td></tr>'% (protocol_color, webprotocol)
 	print '<tr><td align="right">Port: </td><td>%s<br></td></tr>'%serverport
