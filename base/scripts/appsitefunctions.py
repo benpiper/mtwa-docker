@@ -283,7 +283,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				#This gets and sets the values for the app server 
 				try:
 					url="%s/appserverinfo.py" %(AppServerURI)
-					appserverresponse = urllib.urlopen(url)
+					appserverresponse = urllib2.urlopen(url)
 					appserverhtml = removehtmlheaders(appserverresponse.read())
 					print appserverhtml
 				except:
@@ -300,7 +300,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 						#Here formname_or_cmd is used as the NAME which was entered into the form
 						try:
 							urlstr = '%s/commitdb-app.py?name=%s&notes=%s&count=%s'%(AppServerURI,formname_or_cmd,formnotes,formcount)
-							appserverresponse = urllib.urlopen(urlstr)
+							appserverresponse = urllib2.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
 						except:
@@ -310,7 +310,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 						#Here formname_or_cmd is used as the COMMAND which was entered into the form
 						try:
 							urlstr = '%s/cleardb-app.py?command=%s'%(AppServerURI,formname_or_cmd)
-							appserverresponse = urllib.urlopen(urlstr)
+							appserverresponse = urllib2.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
 						except:
@@ -318,7 +318,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 					else:
 						try:
 							urlstr = '%s/%s.py'%(AppServerURI,modulename)
-							appserverresponse = urllib.urlopen(urlstr)
+							appserverresponse = urllib2.urlopen(urlstr)
 							appserverhtml = removehtmlheaders(appserverresponse.read())
 							print appserverhtml
 						except:
