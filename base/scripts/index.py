@@ -12,14 +12,12 @@ cgitb.enable()
 def id_generator(size=6, chars=string.ascii_uppercase):
  return ''.join(random.choice(chars) for _ in range(size))
 
-def get_cookie_by_name(cj, name):
- return [cookie for cookie in cj if cookie.name == name][0]
-
 if 'HTTP_COOKIE' in os.environ:
  cookies = os.environ['HTTP_COOKIE']
- appcookie = get_cookie_by_name(cookies, "appSessionID")
- print appcookie.output()
- 
+ c = Cookie.SimpleCookie()
+ c.load(cookies)
+ c['appSessionID']['expires'] = 300
+ print c.output()
 else:
 #Set cookie
  appsessionidvalue = socket.gethostname()+id_generator()
