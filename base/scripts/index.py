@@ -17,10 +17,11 @@ def get_cookie_by_name(cj, name):
 
 if 'HTTP_COOKIE' in os.environ:
  cookies = os.environ['HTTP_COOKIE']
- appcookie = get_cookie_by_name(cookies, "appSessionID")
  c = Cookie.SimpleCookie()
- c.load(appcookie)
- print c.output()
+ c.load(cookies)
+ appcookie = Cookie.SimpleCookie()
+ appcookie = get_cookie_by_name(c, "appSessionID")
+ print appcookie.output()
  
 else:
 #Set cookie
