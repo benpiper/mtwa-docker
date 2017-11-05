@@ -224,7 +224,6 @@ def printserverinfo(hostname,ipaddress,webprotocol,serverport,ec2hostname):
 	print '<tr><td align="right">Protocol: </td><td><B><font color=\"%s\">%s</B><br></td></tr>'% (protocol_color, webprotocol)
 	print '<tr><td align="right">Port: </td><td>%s<br></td></tr>'%serverport
 	print '<tr><td align="right">Application Version:</td><td>0.6.2<br></td></tr></font>'
-	print '<tr><td align="right">Local System Time:</td><td>%s<br></td></tr>' %localtime
 
 	
 def printsite(modulename,formname_or_cmd,formnotes,formcount):
