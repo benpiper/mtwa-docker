@@ -12,19 +12,21 @@ cgitb.enable()
 def id_generator(size=6, chars=string.ascii_uppercase):
  return ''.join(random.choice(chars) for _ in range(size))
 
-if 'HTTP_COOKIE' in os.environ:
- cookies = os.environ['HTTP_COOKIE']
- c = Cookie.SimpleCookie()
- c.load(cookies)
- c['appSessionID']['expires'] = 300
- print c.output()
-else:
-#Set cookie
- appsessionidvalue = socket.gethostname()+id_generator()
- c = Cookie.SimpleCookie()
- c['appSessionID'] = appsessionidvalue
- c['appSessionID']['expires'] = 300
- print c.output()
+if 'SETCOOKIE' in os.environ:
+ #Check if any cookie exists
+ if 'HTTP_COOKIE' in os.environ:
+  cookies = os.environ['HTTP_COOKIE']
+  c = Cookie.SimpleCookie()
+  c.load(cookies)
+  c['appSessionID']['expires'] = 300
+  print c.output()
+ else:
+ #Set cookie
+  appsessionidvalue = socket.gethostname()+id_generator()
+  c = Cookie.SimpleCookie()
+  c['appSessionID'] = appsessionidvalue
+  c['appSessionID']['expires'] = 300
+  print c.output()
 
 #This will figure out what module to call based on the URL passed.  /index.py?module=viewdb for example
 form = cgi.FieldStorage()
