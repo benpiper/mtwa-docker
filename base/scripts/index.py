@@ -16,7 +16,7 @@ if 'HTTP_COOKIE' in os.environ:
  cookies = os.environ['HTTP_COOKIE']
  c = Cookie.SimpleCookie()
  c.load(cookies)
- c['appSessionID']['expires'] = 0
+ #c['appSessionID']['expires'] = 300
  print c.output()
 else:
 #Set cookie
