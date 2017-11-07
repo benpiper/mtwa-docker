@@ -13,6 +13,7 @@ RUN apt-get update \
  && pip install pymysql \
  && a2dismod mpm_event \
  && a2enmod mpm_prefork cgi \
+ && a2enmod ssl
  && service apache2 restart \
  && mkdir /etc/mtwa \
  && mkdir /var/www/html/appdemo
@@ -22,7 +23,10 @@ COPY mtwa.conf /etc/mtwa/
 COPY html/* /var/www/html/appdemo/
 COPY scripts/* /var/www/html/appdemo/
 COPY entrypoint.sh /sbin/entrypoint.sh
-RUN chmod 755 /sbin/entrypoint.sh
+RUN chmod 755 /sbin/entrypoint.sh \
+ && mkdir /etc/apache2/ssl
+COPY apache.* /etc/apache2/ssl/
+
 
 # Copy configuration files when using this as a base for the web and app tier images
 ONBUILD COPY 000-default.conf /etc/apache2/sites-enabled/
