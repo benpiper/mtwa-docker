@@ -3,8 +3,8 @@ LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
 ENV APPSERVER="http://app.siliconharbor.io:8080" \
-    DBSERVER="db.siliconharbor.io"
-#Add SETCOOKIE=anything variable to set application session cookie
+    DBSERVER="db.siliconharbor.io" \
+    SETCOOKIE=yes
 
 # Install Apache and Python and create directory structures
 RUN apt-get update \
