@@ -14,14 +14,8 @@ def id_generator(size=6, chars=string.ascii_uppercase):
 
 if 'SETCOOKIE' in os.environ:
  #Check if any cookie exists
- if 'HTTP_COOKIE' in os.environ:
-  cookies = os.environ['HTTP_COOKIE']
-  c = Cookie.SimpleCookie()
-  c.load(cookies)
-  c['appSessionID']['expires'] = 300
-  print c.output()
- else:
- #Set cookie
+ if 'HTTP_COOKIE' not in os.environ:
+  #Set cookie
   appsessionidvalue = socket.gethostname()+id_generator()
   c = Cookie.SimpleCookie()
   c['appSessionID'] = appsessionidvalue
