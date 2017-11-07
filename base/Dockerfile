@@ -7,11 +7,11 @@ ENV APPSERVER="http://app.siliconharbor.io:8080" \
     SETCOOKIE=yes
 
 # Install Apache and Python and create directory structures
-RUN apt-get update
-RUN apt-get install apache2 python-pip -y \
- && apt-get clean
-RUN pip install pymysql \
-RUN a2dismod mpm_event \
+RUN apt-get update \
+ && apt-get install apache2 python-pip -y \
+ && apt-get clean \
+ && pip install pymysql \
+ && a2dismod mpm_event \
  && a2enmod mpm_prefork cgi \
  && a2enmod ssl \
  && service apache2 restart \
