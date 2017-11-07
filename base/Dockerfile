@@ -13,7 +13,7 @@ RUN apt-get update \
  && pip install pymysql \
  && a2dismod mpm_event \
  && a2enmod mpm_prefork cgi \
- && a2enmod ssl
+ && a2enmod ssl \
  && service apache2 restart \
  && mkdir /etc/mtwa \
  && mkdir /var/www/html/appdemo
