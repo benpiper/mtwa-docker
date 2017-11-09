@@ -19,7 +19,7 @@ if 'SETCOOKIE' in os.environ:
   appsessionidvalue = socket.gethostname()+id_generator()
   c = Cookie.SimpleCookie()
   c['appSessionID'] = appsessionidvalue
-  c['appSessionID']['expires'] = 300
+  #c['appSessionID']['expires'] = 300
   print c.output()
 
 #This will figure out what module to call based on the URL passed.  /index.py?module=viewdb for example
