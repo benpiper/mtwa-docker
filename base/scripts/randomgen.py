@@ -4,7 +4,10 @@ import cgitb
 
 cgitb.enable()
 
-def random_generator(size=10485760, chars=string.ascii_uppercase):
+print '''
+'''
+
+def random_generator(size=10248000, chars=string.ascii_uppercase):
  print ''.join(random.choice(chars) for _ in range(size))
 
 random_generator()
