@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import string, random
 
 def random_generator(size=104857600, chars=string.digits):
  return ''.join(random.choice(chars) for _ in range(size))
@@ -12,3 +13,8 @@ print '''
 	<body>
   '''
 print random_generator()
+
+print '''
+</body>
+</html>
+'''
