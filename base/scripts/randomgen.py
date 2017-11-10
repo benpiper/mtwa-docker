@@ -1,20 +1,7 @@
 #!/usr/bin/python
 import string, random
 
-def random_generator(size=104857600, chars=string.digits):
+def random_generator(size=104857600, chars=string.ascii_uppercase):
  return ''.join(random.choice(chars) for _ in range(size))
 
-print '''
-	<Content-type: text/html\\n\\n>
-	<html>
-	<head>
-	<title>Random Data</title>
-	</head>
-	<body>
-  '''
 print random_generator()
-
-print '''
-</body>
-</html>
-'''
