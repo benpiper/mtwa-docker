@@ -1,8 +1,6 @@
 #!/usr/bin/python
 import string, random
-import cgitb
-
-cgitb.enable()
+import socket
 
 print '''
 '''
@@ -10,4 +8,5 @@ print '''
 def random_generator(size=15372000, chars=string.printable):
  print ''.join(random.choice(chars) for _ in range(size))
 
+print socket.gethostname()
 random_generator()
