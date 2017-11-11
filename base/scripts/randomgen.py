@@ -7,7 +7,7 @@ cgitb.enable()
 print '''
 '''
 
-def random_generator(size=20496000, chars=string.printable):
+def random_generator(size=15372000, chars=string.printable):
  print ''.join(random.choice(chars) for _ in range(size))
 
 random_generator()
