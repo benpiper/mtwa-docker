@@ -3,7 +3,7 @@ LABEL maintainer="ben@benpiper.com"
 LABEL Description="Base image for the multi-tier web app. This is used to build the web and application tier images."
 
 ENV APPSERVER="http://myAppTierLoadBalancer.us-east-1.elb.amazonaws.com:8080" \
-    DBSERVER="172.31.101.99" \
+    DBSERVER="172.31.101.99"
 #    SETCOOKIE=yes
 
 # Install Apache and Python and create directory structures
