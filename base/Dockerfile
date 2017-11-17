@@ -4,7 +4,7 @@ LABEL Description="Base image for the multi-tier web app. This is used to build 
 
 ENV APPSERVER="http://app.siliconharbor.io:8080" \
     DBSERVER="db.siliconharbor.io" \
-    SETCOOKIE=no
+#    SETCOOKIE=yes
 
 # Install Apache and Python and create directory structures
 RUN apt-get update \
