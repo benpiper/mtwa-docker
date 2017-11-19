@@ -270,8 +270,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				print '<tr><td align="right">IPv4:</td><td>%s<br></td></tr>' %clientipaddress
 				print '<tr><td align="right">Port:</td><td>%s<br></td></tr>' %clientportnum
 				print '<tr><td align="right">X-Forwarded-For:</td><td>%s<br></td></tr>' %forwarded_for
-				print '<tr><td align="right">Port:</td><td>%s<br></td></tr>' %forwarded_port
-				print '<tr><td align="right">Cookies</td><td>%s<br></td></tr>' %cookies
+				print '<tr><td align="right">Cookies:</td><td>%s<br></td></tr>' %cookies
 
 			#This print the local web server information
 			if each == '<!-- StartWebServerInfo -->':
