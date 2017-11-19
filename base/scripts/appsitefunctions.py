@@ -267,7 +267,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				#This will print the table row information for the client information table
 				print '<tr><td align="right">IPv4:</td><td>%s<br></td></tr>' %clientipaddress
 				print '<tr><td align="right">Port:</td><td>%s<br></td></tr>' %clientportnum
-				print '<tr><td align="right">X_Forwarded_For:</td><td>%s<br></td></tr>' %forwarded_for
+				print '<tr><td align="right">X-Forwarded-For:</td><td>%s<br></td></tr>' %forwarded_for
 				print '<tr><td align="right">Cookies:</td><td>%s<br></td></tr>' %cookies
 
 			#This print the local web server information
