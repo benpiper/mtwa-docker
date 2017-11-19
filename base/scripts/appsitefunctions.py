@@ -168,7 +168,8 @@ def getclientinfo():
 	x4ed4 = getserverparam('HTTP_X_FORWARDED_FOR')
 	# print 'x4ed4', x4ed4 #db
 	cookies = getserverparam('HTTP_COOKIE')
-	return (clientip,clientport,x4ed4,cookies)
+	x4edp = getserverparam('HTTP_X_FORWARDED_PORT')
+	return (clientip,clientport,x4ed4,cookies,x4edp)
 
 def enterdbformhtml():
 	
@@ -239,6 +240,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 		clientportnum = clientvalues[1]
 		forwarded_for = clientvalues[2]
 		cookies = clientvalues[3]
+		forwarded_port = clientvalues[4]
 		servervalues = getserverinfo()
 		host = servervalues[0]
 		ipaddress = servervalues[1]
@@ -268,6 +270,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				print '<tr><td align="right">IPv4:</td><td>%s<br></td></tr>' %clientipaddress
 				print '<tr><td align="right">Port:</td><td>%s<br></td></tr>' %clientportnum
 				print '<tr><td align="right">X-Forwarded-For:</td><td>%s<br></td></tr>' %forwarded_for
+				print '<tr><td align="right">X-Forwarded-Port:</td><td>%s<br></td></tr>' %forwarded_port
 				print '<tr><td align="right">Cookies:</td><td>%s<br></td></tr>' %cookies
 
 			#This print the local web server information
