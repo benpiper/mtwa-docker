@@ -9,7 +9,7 @@ Waiting for 15 seconds...
 
 time.sleep(15)
 
-def random_generator(size=1024000, chars=string.printable):
+def random_generator(size=102400, chars=string.printable):
  return ''.join(random.choice(chars) for _ in range(size))
 
 print socket.gethostname() + '  ' + random_generator()
