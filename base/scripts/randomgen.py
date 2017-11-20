@@ -4,10 +4,8 @@ import socket
 import time
 
 print '''
-Waiting for 15 seconds...
+Random data generator
 '''
-
-time.sleep(15)
 
 def random_generator(size=102400, chars=string.printable):
  return ''.join(random.choice(chars) for _ in range(size))
