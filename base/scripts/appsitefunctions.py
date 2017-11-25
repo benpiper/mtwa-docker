@@ -262,7 +262,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 				
 			if each == '<!-- StartImageInfo -->':
 				
-				print '<IMG SRC="image"></IMG>'
+				print '<IMG SRC="image.php"></IMG>'
 
 			if each == '<!-- StartClientInfo -->':
 
