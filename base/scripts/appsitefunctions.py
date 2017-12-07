@@ -224,7 +224,6 @@ def printserverinfo(hostname,ipaddress,webprotocol,serverport,ec2hostname):
 	print '<tr><td align="right">IPv4:</td><td>%s<br></td></tr>' %ipaddress
 	print '<tr><td align="right">Protocol: </td><td><B><font color=\"%s\">%s</B><br></td></tr>'% (protocol_color, webprotocol)
 	print '<tr><td align="right">Port: </td><td>%s<br></td></tr>'%serverport
-	print '<tr><td align="right">Application Version:</td><td>0.6.2<br></td></tr></font>'
 
 	
 def printsite(modulename,formname_or_cmd,formnotes,formcount):
@@ -288,7 +287,7 @@ def printsite(modulename,formname_or_cmd,formnotes,formcount):
 					appserverhtml = removehtmlheaders(appserverresponse.read())
 					print appserverhtml
 				except:
-					print '<table border="0"><tr><td>Hostname:</td><td><font color="red">ERROR</font><br></td></tr><tr><td>IPv4:</td><td><font color="red">ERROR</font><br></td></tr><tr><td>Protocol: </td><td><font color="red">ERROR</font><br></td></tr><tr><td>Port: </td><td><font color="red">ERROR</font><br></td></tr><tr><td>Application Version:</td><td><font color="red">ERROR</font><br></td></tr></font><tr><td>Local System Time:</td><td><font color="red">ERROR</font><br></td></tr></table>'
+					print '<table border="0"><tr><td>Hostname:</td><td><font color="red">ERROR</font><br></td></tr><tr><td>IPv4:</td><td><font color="red">ERROR</font><br></td></tr><tr><td>Protocol: </td><td><font color="red">ERROR</font><br></td></tr><tr><td>Port: </td><td><font color="red">ERROR</font><br></td></tr></font><tr><td>Local System Time:</td><td><font color="red">ERROR</font><br></td></tr></table>'
 
 			if each == '<!-- StartCustom -->':
 				#This uses to value passed from the URL to basically set which .py script is used for this section.
