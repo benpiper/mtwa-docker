@@ -8,7 +8,7 @@ ENV APPSERVER="http://myAppTierLoadBalancer.us-east-1.elb.amazonaws.com:8080" \
 
 # Install Apache and Python and create directory structures
 RUN apt-get update \
- && apt-get install apache2 python-pip -y \
+ && apt-get install apache2 python3-pip -y \
  && apt-get clean \
  && pip install pymysql \
  && a2dismod mpm_event \
